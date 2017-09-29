@@ -18,6 +18,12 @@ while True:
             d.delay(30.0)
         # mission start
         elif d.click_exists("imgs/start.1920x1080.png") != None:
+            d.delay(1.0)
+            d.free_screen()
+            d.keep_screen()
+            # check if hidden ticket is available
+            if d.exists("imgs/hidden_available.1920x1080.png"):
+                d.click_exists("imgs/yes_green.1920x1080.png")
             d.delay(60.0)
         # timeline start
         elif d.click_exists("imgs/fight.1920x1080.png") != None:
